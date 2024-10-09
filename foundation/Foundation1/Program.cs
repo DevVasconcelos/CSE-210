@@ -28,19 +28,19 @@ public class Video
         Comments = new List<Comment>();
     }
 
-    // Método para adicionar um comentário
+    // Method to add a comment
     public void AddComment(Comment comment)
     {
         Comments.Add(comment);
     }
 
-    // Método para retornar o número de comentários
+    // Method to return the number of comments
     public int GetCommentCount()
     {
         return Comments.Count;
     }
 
-    // Método para exibir os comentários
+    // Method to display comments
     public void DisplayComments()
     {
         foreach (var comment in Comments)
@@ -54,30 +54,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Criando os vídeos
+        // Creating the videos
         Video video1 = new Video("Learn C# in 10 Minutes", "Tech Guru", 600);
         Video video2 = new Video("Mastering OOP Concepts", "Code Master", 1200);
         Video video3 = new Video("Fun with Data Structures", "Coding Fun", 900);
 
-        // Adicionando comentários ao video1
+        // Adding comments to video1
         video1.AddComment(new Comment("Alice", "Great video, very helpful!"));
         video1.AddComment(new Comment("Bob", "I learned a lot, thanks!"));
         video1.AddComment(new Comment("Charlie", "Nice explanation!"));
 
-        // Adicionando comentários ao video2
+        // Adding comments to video2
         video2.AddComment(new Comment("David", "This really clarified OOP for me!"));
         video2.AddComment(new Comment("Emma", "OOP rocks!"));
         video2.AddComment(new Comment("Frank", "Very well presented."));
 
-        // Adicionando comentários ao video3
+        // Adding comments to video3
         video3.AddComment(new Comment("Grace", "Awesome video!"));
         video3.AddComment(new Comment("Hannah", "Loved the examples!"));
         video3.AddComment(new Comment("Ivy", "Very informative!"));
 
-        // Criando a lista de vídeos
+        // Creating the video list
         List<Video> videos = new List<Video> { video1, video2, video3 };
 
-        // Exibindo informações de cada vídeo
+        // Displaying information for each video
         foreach (var video in videos)
         {
             Console.WriteLine($"Title: {video.Title}");
@@ -85,7 +85,7 @@ class Program
             Console.WriteLine($"Length: {video.LengthInSeconds} seconds");
             Console.WriteLine($"Number of comments: {video.GetCommentCount()}");
 
-            // Exibindo os comentários
+            // Displaying comments
             video.DisplayComments();
             Console.WriteLine();
         }
